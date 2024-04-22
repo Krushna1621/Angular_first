@@ -1,11 +1,11 @@
-<h1>This is is user profile</h1>
+<!-- <h1>This is is user profile</h1>
 <h4>Name - {{name.toUpperCase()}} Status - {{status.toUpperCase()}} Salary - {{salary}}</h4>
 
 <button [disabled]="isBtnDisabled">Click me</button>
 
 <h1>this is input value {{inputValue}}</h1>
 
-<!-- <input type="text" [value]="inputValue" (input)="onChange($event)"> -->
+<input type="text" [value]="inputValue" (input)="onChange($event)">
 <input type="text" [(ngModel)]="inputValue">
 
 <div>
@@ -28,4 +28,6 @@
     <ng-template #elseBlock>
         <h4>Name - {{user.name}} Status - {{user.isSingle?"single":"not single"}} - Salary - none</h4>
     </ng-template>
-</div>
+</div> -->
+
+<h1>Name - {{name}} - status {{isSingle?"single":"not single"}} - salary {{salary}}</h1>

@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, isSignal } from '@angular/core';
+import { Component, Input, booleanAttribute, numberAttribute } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 
 @Component({
@@ -10,29 +10,32 @@ import { FormsModule } from "@angular/forms";
   styleUrl: './user-profile.component.css'
 })
 export class UserProfileComponent {
-   name="ram";
-   status="single";
-   salary=8829839000;
-   isBtnDisabled=false;
-   inputValue="test";
+  @Input ({alias: 'username'}) name = "";
+  @Input ({transform:booleanAttribute}) isSingle!: boolean;
+  @Input ({transform:numberAttribute}) salary!: number;
+  //  name="ram";
+  //  status="single";
+  //  salary=8829839000;
+  //  isBtnDisabled=false;
+  //  inputValue="test";
 
-users=[
-  {
-    name:"Ram",
-    isSingle:true,
-    salary:9
-  },
-  {
-    name:"Shyam",
-    isSingle:false,
-    salary:8829839000
-  },
-  {
-    name:"Ganesh",
-    isSingle:false,
-    salary:893738000
-  }
-]
+// users=[
+//   {
+//     name:"Ram",
+//     isSingle:true,
+//     salary:9
+//   },
+//   {
+//     name:"Shyam",
+//     isSingle:false,
+//     salary:8829839000
+//   },
+//   {
+//     name:"Ganesh",
+//     isSingle:false,
+//     salary:893738000
+//   }
+// ]
    
   //  onChange(e:Event){
   //   const value =(e.target as HTMLInputElement).value;
