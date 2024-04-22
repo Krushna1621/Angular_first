@@ -1,2 +1,31 @@
 <h1>This is is user profile</h1>
-//ng g c components/user-profile
+<h4>Name - {{name.toUpperCase()}} Status - {{status.toUpperCase()}} Salary - {{salary}}</h4>
+
+<button [disabled]="isBtnDisabled">Click me</button>
+
+<h1>this is input value {{inputValue}}</h1>
+
+<!-- <input type="text" [value]="inputValue" (input)="onChange($event)"> -->
+<input type="text" [(ngModel)]="inputValue">
+
+<div>
+    @for(user of users;track user.name){
+    @if(user.salary > 10000){
+    <h4>Name - {{user.name}} Status - {{user.isSingle?"single":"not single"}} - Salary - {{user.salary}}</h4>
+    }
+    @else{
+    <h4>Name - {{user.name}} Status - {{user.isSingle?"single":"not single"}} - Salary - none</h4>
+    }
+
+    }
+</div>
+
+<hr />
+
+<div *ngFor="let user of users">
+    <h4 *ngIf="user.salary > 10000;else elseBlock">Name - {{user.name}} Status - {{user.isSingle?"single":"not single"}}
+        - Salary - {{user.salary}}</h4>
+    <ng-template #elseBlock>
+        <h4>Name - {{user.name}} Status - {{user.isSingle?"single":"not single"}} - Salary - none</h4>
+    </ng-template>
+</div>
