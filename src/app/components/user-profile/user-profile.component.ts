@@ -2,11 +2,12 @@ import { CommonModule } from "@angular/common";
 import { Component, Input, booleanAttribute, numberAttribute,Output, EventEmitter } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { User } from "../../../models/user";
+import { ContryCodePipe } from "../../pipes/contry-code.pipe";
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,ContryCodePipe],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
@@ -22,31 +23,32 @@ export class UserProfileComponent {
 
 
   //  name="ram";
-  //  status="single";
+   status="single";
   //  salary=8829839000;
-  //  isBtnDisabled=false;
-  //  inputValue="test";
+  phoneno=1234567890;
+   isBtnDisabled=false;
+   inputValue="test";
 
-// users=[
-//   {
-//     name:"Ram",
-//     isSingle:true,
-//     salary:9
-//   },
-//   {
-//     name:"Shyam",
-//     isSingle:false,
-//     salary:8829839000
-//   },
-//   {
-//     name:"Ganesh",
-//     isSingle:false,
-//     salary:893738000
-//   }
-// ]
+users=[
+  {
+    name:"Ram",
+    isSingle:true,
+    salary:9
+  },
+  {
+    name:"Shyam",
+    isSingle:false,
+    salary:8829839000
+  },
+  {
+    name:"Ganesh",
+    isSingle:false,
+    salary:893738000
+  }
+]
    
-  //  onChange(e:Event){
-  //   const value =(e.target as HTMLInputElement).value;
-  //  this.inputValue=value
-  //  }
+   onChange(e:Event){
+    const value =(e.target as HTMLInputElement).value;
+   this.inputValue=value
+   }
 }

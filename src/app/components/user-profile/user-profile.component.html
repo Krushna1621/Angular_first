@@ -1,5 +1,6 @@
-<!-- <h1>This is is user profile</h1>
-<h4>Name - {{name.toUpperCase()}} Status - {{status.toUpperCase()}} Salary - {{salary}}</h4>
+<h1>This is is user profile</h1>
+<h4>Name - {{name | titlecase}} Status - {{status.toUpperCase()}} Salary - {{salary | currency:"INR"}}</h4>
+<h2>{{phoneno | contryCode:"USA"}}</h2>
 
 <button [disabled]="isBtnDisabled">Click me</button>
 
@@ -28,7 +29,7 @@
     <ng-template #elseBlock>
         <h4>Name - {{user.name}} Status - {{user.isSingle?"single":"not single"}} - Salary - none</h4>
     </ng-template>
-</div> -->
+</div>
 
 <h1>Name - {{name}} - status {{isSingle?"single":"not single"}} - salary {{salary}}</h1>
 <button (click)="sendData()">Send Data</button>
