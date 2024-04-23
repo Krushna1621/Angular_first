@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, booleanAttribute, numberAttribute } from '@angular/core';
+import { Component, Input, booleanAttribute, numberAttribute,Output, EventEmitter } from '@angular/core';
 import { FormsModule } from "@angular/forms";
+import { User } from "../../../models/user";
 
 @Component({
   selector: 'app-user-profile',
@@ -13,6 +14,13 @@ export class UserProfileComponent {
   @Input ({alias: 'username'}) name = "";
   @Input ({transform:booleanAttribute}) isSingle!: boolean;
   @Input ({transform:numberAttribute}) salary!: number;
+
+  @Output() myEvent =new EventEmitter<User>();
+  sendData(){
+    this.myEvent.emit({name:this.name,newSalary:10000});
+  }
+
+
   //  name="ram";
   //  status="single";
   //  salary=8829839000;

@@ -1,3 +1,3 @@
 <h1>Krushnakant</h1>
-<app-user-profile *ngFor="let u of users" [username]="u.name" [isSingle]="u.isSingle"
-    [salary]="u.salary"></app-user-profile>
+<app-user-profile *ngFor="let u of users" [username]="u.name" [isSingle]="u.isSingle" [salary]="u.salary"
+    (myEvent)="receivedData($event)"></app-user-profile>
