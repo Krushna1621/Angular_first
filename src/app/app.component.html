@@ -1,4 +1,3 @@
 <h1>Krushnakant</h1>
-<app-user-profile username="Ram" isSingle="true" salary="10000"></app-user-profile>
-<app-user-profile username="Shyam" isSingle="false" salary="20000"></app-user-profile>
-<app-user-profile username="Ganesh" isSingle="true" salary="30000"></app-user-profile>
+<app-user-profile *ngFor="let u of users" [username]="u.name" [isSingle]="u.isSingle"
+    [salary]="u.salary"></app-user-profile>
